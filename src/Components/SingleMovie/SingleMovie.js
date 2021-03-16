@@ -1,19 +1,19 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-
 const SingleMovie = (props) => {
-  console.log(props.movie);
+  const { title, poster_path, id } = props.movie;
   return (
-    <div className='col-md-3 my-3'>
+    <div className=" col-md-4 my-3">
       <Card>
-        <Card.Img variant="top" src="holder.js/100px180" />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+        <Card.Img
+          variant="top"
+          src={`https://image.tmdb.org/t/p/w1280/${poster_path}`}
+        />
+
+        <Card.Body className="text-center">
+          <Card.Title>{title}</Card.Title>
+
+          <Button variant="danger">Show details</Button>
         </Card.Body>
       </Card>
     </div>
